@@ -43,6 +43,7 @@ spotbugs {
 }
 
 pmd {
+	//toolVersion = "6.21.0"
 	ruleSets = ["category/java/errorprone.xml", "category/java/bestpractices.xml"]
     //"category/java/codestyle.xml"
     //"category/java/design.xml"
