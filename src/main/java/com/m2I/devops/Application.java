@@ -6,8 +6,9 @@ public class Application {
 		System.out.println("Hello world!");
 		
 		Calculator c = new Calculator();
-		c.add(2, 3);
-		c.sub(9, 2);
+		System.out.println(c.add(2, 3));
+		int r=c.sub(9, 2);
+		System.out.println(r);
 	}
 
 }
