@@ -10,6 +10,7 @@ plugins {
     // Apply the java-library plugin to add support for Java Library
     id 'java-library'
     id 'jacoco'
+    id 'com.github.spotbugs' version "4.7.0"
 }
 
 repositories {
@@ -29,4 +30,9 @@ dependencies {
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
+}
+
+spotbugs {
+	ignoreFailures= true
+	spotbugsTest.enabled= false
 }
