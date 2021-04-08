@@ -12,6 +12,7 @@ plugins {
     id 'jacoco'
     id 'com.github.spotbugs' version "4.7.0"
     id 'pmd'
+    id 'checkstyle'
 }
 
 repositories {
@@ -49,4 +50,18 @@ pmd {
     //"category/java/multithreading.xml"
     //"category/java/performance.xml"
     //"category/java/security.xml"
+}
+checkstyle {
+	toolVersion='8.41.1'
+	checkstyleTest.enabled=false
+}
+
+task checkstyleMain ( type: Checkstyle, overwrite: true) {
+	ignoreFailures=true
+	showViolations=false
+	source fileTree('src/main/java')
+	include '**/*.java'
+	exclude '**/gen/**'
+	classpath=fileTree("${project.buildDir}/class/java/main")
+	configFile=file("${rootProject.rootDir}/config/checkstyle/checkstyle.xml")
 }
