@@ -11,6 +11,7 @@ plugins {
     id 'java-library'
     id 'jacoco'
     id 'com.github.spotbugs' version "4.7.0"
+    id 'pmd'
 }
 
 repositories {
@@ -36,3 +37,9 @@ spotbugs {
 	ignoreFailures= true
 	spotbugsTest.enabled= false
 }
+/*
+pmd {
+    toolVersion = "6.23.0"
+    ruleSetFiles = files("config/pmd/pmd.xml")
+	ruleSets = ["category/java/errorprone.xml", "category/java/bestpractices.xml"]
+}*/
